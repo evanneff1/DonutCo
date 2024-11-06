@@ -23,7 +23,7 @@ jobs:
         run: dotnet build DonutCo.csproj --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish Do.csproj -c Release -o ./publish
+        run: dotnet publish DonutCo.csproj -c Release -o ./publish
 
       - name: Zip published files
         run: |
