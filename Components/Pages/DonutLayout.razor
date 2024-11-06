@@ -1,0 +1,29 @@
+@using DonutCo.Components.Data
+<RadzenRow>
+    @foreach (var item in filteredItems.Chunk(3))
+    {
+        <RadzenRow>
+            @foreach (var donut in item)
+            {
+                <RadzenCard class="rz-border-radius-3">
+                    <RadzenRow Gap="0.5rem">
+                        <RadzenColumn>
+                            <RadzenImage Path="@donut.ImageUrl" Style="width: 20rem;" AlternateText="@donut.Name"/>
+                            <div style="text-align: center; margin-top: 0.5rem; font-family: Roboto Mono, monospace;">@donut.Name</div>
+                        </RadzenColumn>
+                    </RadzenRow>
+                </RadzenCard>
+            }
+        </RadzenRow>
+    }
+</RadzenRow>
+
+@code
+{
+    [Parameter] public IEnumerable<DonutItem> Items { get; set; }
+
+    [Parameter] public string FilterType { get; set; }
+
+    private IEnumerable<DonutItem> filteredItems =>
+        FilterType == "All" ? Items : Items.Where(item => item.Type == FilterType);
+}

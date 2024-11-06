@@ -1,0 +1,51 @@
+﻿@page "/"
+@using DonutCo.Components.Data
+@using Microsoft.EntityFrameworkCore
+@rendermode InteractiveServer
+@inject DonutContext _dbContext
+<PageTitle>Home</PageTitle>
+
+@if (isLoaded)
+{
+
+    <RadzenTabs>
+        <Tabs>
+            <RadzenTabsItem Text="All">
+                <div class="main-page">
+                <DonutLayout Items="donutItems" FilterType="All"/>
+                </div>
+            </RadzenTabsItem>
+            <RadzenTabsItem Text="Iced">
+                <DonutLayout Items="donutItems" FilterType="Iced"/>
+            </RadzenTabsItem>
+            <RadzenTabsItem Text="Glazed">
+                <DonutLayout Items="donutItems" FilterType="Glazed"/>
+            </RadzenTabsItem>
+            <RadzenTabsItem Text="Filled">
+                <DonutLayout Items="donutItems" FilterType="Filled"/>
+            </RadzenTabsItem>
+            <RadzenTabsItem Text="Cake">
+                <DonutLayout Items="donutItems" FilterType="Cake"/>
+            </RadzenTabsItem>
+        </Tabs>
+    </RadzenTabs>
+}
+else
+{
+    <RadzenPanel>
+        <RadzenLabel Text="Loading..." />
+    </RadzenPanel>
+}
+
+@code
+{
+    private IEnumerable<DonutItem> donutItems;
+    private bool isLoaded = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+// Fetch data from the database
+        donutItems = await _dbContext.DonutItems.ToListAsync(); // Load all items from the database
+        isLoaded = true;
+    }
+}

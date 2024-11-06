@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonutCo", "DonutCo.csproj", "{87CBFA9F-2194-49F0-9BAC-E3ECBD48B44F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87CBFA9F-2194-49F0-9BAC-E3ECBD48B44F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87CBFA9F-2194-49F0-9BAC-E3ECBD48B44F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87CBFA9F-2194-49F0-9BAC-E3ECBD48B44F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87CBFA9F-2194-49F0-9BAC-E3ECBD48B44F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
