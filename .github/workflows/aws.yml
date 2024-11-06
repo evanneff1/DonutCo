@@ -60,7 +60,7 @@ jobs:
 
       - name: Upload application to EC2
         run: |
-          scp -o StrictHostKeyChecking=no -r ./application.zip ec2-user@${{ secrets.EC2_HOST }}:/home/ubuntu
+          scp -o StrictHostKeyChecking=no -r ./application.zip ubuntu@${{ secrets.EC2_HOST }}:/home/ubuntu
           
       - name: Deploy application on EC2
         run: |
